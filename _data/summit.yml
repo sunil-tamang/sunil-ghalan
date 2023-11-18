@@ -1,0 +1,38 @@
+- name: Mount Everest
+  elevation: 8848
+  country: Nepal
+  year: 2018
+  image: "/css/images/manaslu.jpg" # Adjust the path accordingly
+  slug: mount-everest
+
+- name: Ama Dablam
+  elevation: 8611
+  country: Pakistan
+  year: 2019
+  image: "/css/images/ama.jpg" # Adjust the path accordingly
+  slug: ama-dablam
+
+- name: Mount Everest
+  elevation: 8848
+  country: Nepal
+  year: 2018
+  image: "/css/images/manaslu.jpg" # Adjust the path accordingly
+  slug: mount-everest
+
+- name: Annapurna
+  elevation: 8611
+  country: Pakistan
+  year: 2019
+  image: "/css/images/annapurna.jpg" # Adjust the path accordingly
+  slug: annapurna
+
+- name: K2
+  elevation: 8848
+  country: Nepal
+  year: 2018
+  image: "/css/images/k2.jpg" # Adjust the path accordingly
+  slug: k2
+
+
+
+# Add more mountains as needed

@@ -1,0 +1,40 @@
+
+# Add more mountains as needed
+
+- name: Mount Everest
+  slug: film-1
+  image: /css/images/manaslu.jpg
+  video: /css/video/banner.mp4
+  # Add other properties as needed
+  # elevation: 3000
+  # country: Country 1
+  # year: 2022
+
+- name: Ama Dablam
+  slug: film-2
+  image: /css/images/ama.jpg
+  video:  /css/video/findyourpassion.mp4
+  # Add other properties as needed
+  # elevation: 3500
+  # country: Country 2
+  # year: 2023
+
+# Add more films as needed
+
+- name: Mount Everest
+  elevation: 8848
+  country: Nepal
+  year: 2018
+  image:  /css/images/manaslu.jpg # Adjust the path accordingly
+  video:  /css/video/yeti.mp4
+  slug: mount-everest
+
+- name: Annapurna
+  elevation: 8611
+  country: Pakistan
+  year: 2019
+  image: /css/images/annapurna.jpg # Adjust the path accordingly
+  video: /css/video/yeti.mp4
+  slug: annapurna
+
+
