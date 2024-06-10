@@ -1,5 +1,5 @@
 
-# Add more mountains as needed
+# # Add more mountains as needed
 
 - name: Mount Everest
   slug: film-1
@@ -19,22 +19,26 @@
   # country: Country 2
   # year: 2023
 
-# Add more films as needed
+# # Add more films as needed
 
-- name: Mount Everest
-  elevation: 8848
-  country: Nepal
-  year: 2018
-  image:  /css/images/manaslu.jpg # Adjust the path accordingly
-  video:  /css/video/yeti.mp4
-  slug: mount-everest
+# - name: Mount Everest
+#   elevation: 8848
+#   country: Nepal
+#   year: 2018
+#   image:  /css/images/manaslu.jpg # Adjust the path accordingly
+#   video:  /css/video/yeti.mp4
+#   slug: mount-everest
 
-- name: Annapurna
-  elevation: 8611
-  country: Pakistan
-  year: 2019
-  image: /css/images/annapurna.jpg # Adjust the path accordingly
-  video: /css/video/yeti.mp4
-  slug: annapurna
+# - name: Annapurna
+#   elevation: 8611
+#   country: Pakistan
+#   year: 2019
+#   image: /css/images/annapurna.jpg # Adjust the path accordingly
+#   video: /css/video/yeti.mp4
+#   slug: annapurna
 
 
+# - title: Film 1
+#   year: 2020
+# - title: Film 2
+#   year: 2021

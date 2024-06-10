@@ -54,23 +54,15 @@ body {
   margin: 0; /* Remove default margin to avoid spacing issues */
 }
 
-.about-me-row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .about-me-col {
-  flex: 1;
-  max-width: 600px;
-  margin: 10px;
+  max-width: 100%;
   position: relative;
   border-radius: 8px;
   overflow: hidden; /* Ensure content does not overflow with rounded corners */
 }
 
-.about-me-col:first-child {
-  flex: 2; /* Adjust the width of the first column */
-  max-width: 500px;
+.about-me-col {
+  max-width: 100%;
   height: 700px;
 }
 
@@ -81,25 +73,68 @@ body {
   background-position: center;
 }
 
-.about-me-content {
-  padding: 1.5em;
+@media (min-width: 48em) {
+  .about-me-col {
+    margin-top: 2em;
+  }
+}
+.mountain-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
 }
 
-@media (max-width: 768px) {
-  .about-me-row {
-    padding: 2em;
-  }
-  .about-me-col {
-    flex: 1 0 100%; /* Full width on smaller screens */
-    max-width: none;
-    height: auto;
-  }
-  .about-me-col:first-child {
-    flex: 1;
-    max-width: none;
-    height: auto;
+.mountain-card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+  height: 12vw;
+  width: 440px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Media query for small devices */
+@media screen and (max-width: 768px) {
+  .mountain-card {
+    height: 250px; /* Adjust the height to fit content */
   }
 }
+.mountain-overlays {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 15px;
+  text-align: left;
+  border-radius: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.mountain-title {
+  margin: 0;
+}
+
+p {
+  margin: 5px 0;
+}
+
+.mountain-card:hover .mountain-overlays {
+  background: rgba(0, 0, 0, 0.7);
+}
+
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -111,30 +146,33 @@ body {
   background-size: cover;
   background-position: center;
   margin-bottom: 20px;
-  height: 12vw;
-  text-decoration: none; /* Remove the default link underline */
-  color: inherit; /* Inherit the text color from the parent */
+  height: 250px; /* Adjust the height to fit content */
+  width: 440px;
+  text-decoration: none;
+  color: inherit;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   border-radius: 8px;
+  overflow: hidden;
 }
 
-.card:nth-child(odd) {
-  width: 200px; /* Set a specific width for odd cards */
+@media screen and (min-width: 48em) {
+  .card {
+    height: 250px; /* Adjust the height to fit content */
+  }
+  .card:nth-child(odd) {
+    width: 200px;
+  }
+  .card:nth-child(even) {
+    width: 450px;
+  }
+  .card:nth-child(3n) {
+    width: 350px;
+  }
 }
-
-.card:nth-child(even) {
-  width: 450px; /* Set a different width for even cards */
-}
-
-.card:nth-child(3n) {
-  width: 350px; /* Set a different width for every third card */
-}
-
-/* Add more rules as needed */
 .overlays {
-  background: rgba(0, 0, 0, 0.5); /* Adjust the overlay background color and opacity */
+  background: rgba(0, 0, 0, 0.5);
   color: #fff;
   padding: 15px;
   text-align: left;
@@ -151,21 +189,15 @@ body {
 }
 
 h2 {
-  margin: 0; /* Remove default margin for the heading */
+  margin: 0;
 }
 
 p {
-  margin: 5px 0; /* Add some spacing between paragraphs */
+  margin: 5px 0;
 }
 
 .card:hover .overlays {
-  /* Add hover effect if needed */
-  background: rgba(0, 0, 0, 0.7); /* Adjust the overlay background color and opacity on hover */
-}
-
-.card {
-  position: relative;
-  overflow: hidden;
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .video {
@@ -177,11 +209,12 @@ p {
   -o-object-fit: cover;
      object-fit: cover;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .card:hover .video {
   opacity: 1;
+  transform: scale(1.1); /* Increase size on hover */
 }
 
 .content {
@@ -273,4 +306,43 @@ p {
   height: auto;
   display: block;
   margin: 0 auto;
+}
+
+.intro-section {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.about-me-col {
+  position: relative;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+}
+
+.about-me-content {
+  position: absolute;
+  top: 50%;
+  left: 10%; /* Adjust the left position as needed */
+  transform: translateY(-50%);
+  color: #fff; /* Set the text color */
+  max-width: 60%; /* Adjust the maximum width as needed */
+}
+
+.about-me-content h1 {
+  font-size: 2.5em; /* Adjust the font size as needed */
+  margin-bottom: 10px;
+}
+
+.about-me-content p {
+  font-size: 1.2em; /* Adjust the font size as needed */
 }/*# sourceMappingURL=style.css.map */

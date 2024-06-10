@@ -1,38 +1,36 @@
-- name: Mount Everest
+- name: Lobuche Peak
   elevation: 8848
   country: Nepal
   year: 2018
-  image: "/css/images/manaslu.jpg" # Adjust the path accordingly
-  slug: mount-everest
+  image: "/css/images/everest.jpg" # Adjust the path accordingly
+  slug: lobuche-peak
 
 - name: Ama Dablam
   elevation: 8611
-  country: Pakistan
+  country: Nepal
   year: 2019
   image: "/css/images/ama.jpg" # Adjust the path accordingly
   slug: ama-dablam
 
-- name: Mount Everest
-  elevation: 8848
-  country: Nepal
-  year: 2018
-  image: "/css/images/manaslu.jpg" # Adjust the path accordingly
-  slug: mount-everest
 
-- name: Annapurna
+- name: Mera Peak
   elevation: 8611
-  country: Pakistan
+  country: Nepal
   year: 2019
   image: "/css/images/annapurna.jpg" # Adjust the path accordingly
-  slug: annapurna
+  slug: mera-peak
 
-- name: K2
+- name: Everest
   elevation: 8848
   country: Nepal
   year: 2018
   image: "/css/images/k2.jpg" # Adjust the path accordingly
-  slug: k2
+  slug: everest
 
 
-
-# Add more mountains as needed
+- name: Pisang Peak
+  elevation: 8611
+  country: Nepal
+  year: 2019
+  image: "/css/images/pisang.jpg" # Adjust the path accordingly
+  slug: pisang-peak

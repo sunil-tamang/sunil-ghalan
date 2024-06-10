@@ -4,8 +4,8 @@ slick_css: 'Yes'
 slick_js: 'Yes'
 author_name : "  "
 custom_bg: "bg/banner.jpg"
-tags : "Everest Base Camp Trek, Annapurna Circuit Trek, Annapurna Base Camp Trek, Langtang Valley Trek, Upper Mustang Trek, Manaslu Circuit Trek, Ghorepani Poon Hill Trek ,Gokyo Lakes Trek ,Kanchenjunga Base Camp Trek, Makalu Base Camp Trek "
-description : "The Alpine Expeditions is a leading trekking company in Nepal that offers a range of trekking and hiking trips to some of the most beautiful and remote locations in the Himalayas"
+tags : "Everest Base Camp Trek, Annapurna Circuit Trek, Annapurna Base Camp Trek, Langtang Valley Trek, Upper Mustang Trek, Manaslu Circuit Trek, Makalu Base Camp Trek "
+description : ""
 ---
 
 
@@ -39,27 +39,82 @@ description : "The Alpine Expeditions is a leading trekking company in Nepal tha
 {% endfor %} -->
 
 
-<div class="about-me-row container-wide row--padding-wide">
+<div class="about-me-row container-wide row--padding-medium ">
+
+
+
+  <header>
+    <nav class="navbar">
+        <div class="container">
+            <!-- <h1 class="navbar-brand">SUNIL GHALAN</h1> -->
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="{{ site.baseurl }}/rock-climbing" class="nav-link">ROCK CLIMBING</a></li>
+                <li class="nav-item"><a href="{{ site.baseurl }}/stills" class="nav-link">STILLS</a></li>
+                <li class="nav-item"><a href="{{ site.baseurl }}/films" class="nav-link">FILMS</a></li>
+            
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+
+
 
   <div class="about-me-col">
-    <div class="about-me-img" style="background-image: url('/assets/css/images/about.jpg');"></div>
+    <div class="banner-overlay"></div>
+    <div class="about-me-content">
+     
+      <h1 class="">Sunil Tamang</h1>
+      <p>"Rock Climber, Mountaineer and Filmmaker"</p>
+     
+    </div>
+    <div class="about-me-img" style="background-image: url('{{ site.baseurl }}/assets/css/images/banner.jpg');"></div>
   </div>
   
-  <div class="about-me-col">
-    <div class="about-me-content">
+  <br/><br/>
 
-      <h1 class="content__title">HI .</h1>
-      <br/>
-
-      <p>
-       I'm Sunil Ghalan, a dedicated mountaineer and filmmaker based in the heart of adventure. With a passion for scaling new heights and capturing breathtaking moments, I have explored the world's most challenging peaks.
-
-        My journey not only involves conquering mountains but also telling their stories through the lens of my camera. Through my films, I aim to share the raw beauty, challenges, and triumphs of the mountains.
-
-        Join me on this incredible journey, and let's explore the world together through the eyes of a mountaineer and filmmaker.
-      </p>
-    </div>
-  </div>
+<!-- 
+  <div class="banner-slider">
+    {% for slide in site.data.slideshow.slides %}
+      <div class="slide">
+        {% if slide.type == "image" %}
+          <img src="{{ slide.src }}" alt="{{ slide.alt }}">
+        {% elsif slide.type == "video" %}
+          <video autoplay muted class="slide-video" preload="metadata">
+            <source src="{{ slide.src }}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        {% endif %}
+        <div class="overlay">
+          <div class="overlay-text">
+            {{ slide.overlay_text }}
+            {% if slide.additional_info %}
+              <div class="additional-info">{{ slide.additional_info }}</div>
+            {% endif %}
+          </div>
+          {% if slide.type == "video" %}
+            <button class="play-button">Play</button>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div> -->
+  
+  
+  
+ 
+  <!-- <div class="intro-section">
+    
+    <h1 class="content__title">HI .</h1> 
+    <p>Welcome to my world of adventure! I am Sunil Ghalan, an ardent mountaineer and filmmaker, anchored in the very heart of the thrill-seeking spirit. My life's narrative revolves around scaling new heights and capturing awe-inspiring moments that unfold amidst the world's most formidable peaks.</p>
+   
+    <p>Embarking on this extraordinary journey, my pursuit transcends the mere conquest of mountains; it delves into the art of storytelling, vividly painted through the lens of my camera. Each ascent is not just a physical endeavor but a captivating tale waiting to be shared with the world.</p>
+   
+    <p>I'm Sunil Ghalan, a dedicated mountaineer and filmmaker based in the heart of adventure Through my films, I aim to share the raw beauty, challenges, and triumphs of the mountains .Join me on this incredible journey, and let's explore the world together through the eyes of a mountaineer and filmmaker.</p>
+ 
+  </div> -->
+  
 
  
 </div>
@@ -67,28 +122,54 @@ description : "The Alpine Expeditions is a leading trekking company in Nepal tha
 
 
 
-<div class="container-wide row--padding-wide" >
+<div class="container-wide row--padding-medium " >
 
-  <h1 class="content__title">Elevations Explored</h1> <br/>
-
-  <div class="card-container">
+  <h1 class="content__title">EXPEDITIONS</h1> <br/>
+  
+  <div class="mountain-cards-container">
     {% for summit in site.data.summit %}
-    <a href="{{ summit.slug | prepend: '/summits/' | relative_url }}" class="card" style="background-image: url('{{ summit.image | prepend: '/assets' | relative_url }}');">
-        <div class="overlays">
-        <h2 class="content__sub-title_child ">Project - {{ summit.name }}</h2>
-        <!-- <p>Elevation: {{ summit.elevation }} meters</p> -->
-        <!-- <p>Country: {{ summit.country }}</p> -->
-        <!-- <p>Year: {{ summit.year }}</p> -->
+    <a href="{{ summit.slug | prepend: '/summits/' | relative_url }}" class="mountain-card" style="background-image: url('{{ summit.image | prepend: '/assets' | relative_url }}');">
+        <div class="mountain-overlays">
+            <h2 class="content__title"> {{ summit.name }}</h2>
+            <!-- <p>Elevation: {{ summit.elevation }} meters</p> -->
+            <!-- <p>Country: {{ summit.country }}</p> -->
+            <!-- <p>Year: {{ summit.year }}</p> -->
         </div>
     </a>
     {% endfor %}
-  </div>
+</div>
 
 </div>
 
 
 
-<div class="container-wide row--padding-wide" >
+<!-- <div class="container-wide row--padding-wide" >
+
+  <h1 class="content__title">HIKING </h1> <br/>
+
+
+<div class="card-container">
+  {% for summit in site.data.treks %}
+  <a href="{{ summit.slug | prepend: '/summits/' | relative_url }}" class="card" style="background-image: url('{{ summit.image | prepend: '/assets' | relative_url }}');">
+    <div class="overlays">
+      <h2 class="content__sub-title_child">Project - {{ summit.name }}</h2>
+      <video class="video" loop muted playsinline preload="none" data-src="{{ summit.video | prepend: '/assets' | relative_url }}">
+        <source src="{{ summit.video | prepend: '/assets' | relative_url }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+ 
+  
+
+</div> -->
+
+
+
+<!-- <div class="container-wide row--padding-wide" >
 
   <h1 class="content__title">THe Alpine Films -  My Works</h1> <br/>
 
@@ -98,12 +179,10 @@ description : "The Alpine Expeditions is a leading trekking company in Nepal tha
   <a href="{{ summit.slug | prepend: '/summits/' | relative_url }}" class="card" style="background-image: url('{{ summit.image | prepend: '/assets' | relative_url }}');">
     <div class="overlays">
       <h2 class="content__sub-title_child">Project - {{ summit.name }}</h2>
-      <!-- Add the video element with autoplay attribute set to false -->
       <video class="video" loop muted playsinline preload="none" data-src="{{ summit.video | prepend: '/assets' | relative_url }}">
         <source src="{{ summit.video | prepend: '/assets' | relative_url }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      <!-- End of video element -->
     </div>
   </a>
   {% endfor %}
@@ -112,12 +191,7 @@ description : "The Alpine Expeditions is a leading trekking company in Nepal tha
  
   
 
-</div>
-
-
-
-
-
+</div> -->
 
 
 <script type="application/ld+json">
