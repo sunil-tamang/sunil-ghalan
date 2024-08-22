@@ -81,8 +81,8 @@ body{
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: left;
-    // background-position: right;
+    // background-position: left;
+    background-position: center;
   }
 
 
@@ -135,7 +135,7 @@ body{
   background-position: center;
   margin-bottom: 20px;
   height: 25vw;
-  width: 100%;
+  width: 45%;
   text-decoration: none;
   color: inherit;
   display: flex;
