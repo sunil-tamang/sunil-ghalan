@@ -15,6 +15,7 @@ permalink: slug
 collections:
   summits:
     output: true
+    image: true
     permalink: /summits/:name/
 
 defaults:
