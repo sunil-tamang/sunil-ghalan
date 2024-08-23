@@ -75,7 +75,7 @@ body{
   .about-me-col{
     max-width: 100%;
     // height: 700px;
-    height: 80vh;
+    height: 85vh;
   }
 
   .about-me-img {
@@ -188,17 +188,28 @@ body{
     background-color: rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    // justify-content: flex-end;
+    gap: 2em;
+    font-size: .2em;
 }
 
 .mountain-title {
     margin: 0;
 }
 
-p {
-    margin: 5px 0;
+.mountain-overlays p {
+
 }
 
+.mountain-overlays h2{
+
+}
+
+.mountain-overlays .summit-details{
+
+  font-size: .2em !important;
+
+}
 .mountain-card:hover .mountain-overlays {
     background: rgba(0, 0, 0, 0.7);
 }
@@ -496,6 +507,11 @@ p {
         
   }
   
+  .photo-item{
+    
+    width: 300px;
+  
+  }
   // .about-me-content {
   //     position: absolute;
   //     top: 60%;

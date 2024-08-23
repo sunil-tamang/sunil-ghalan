@@ -133,14 +133,19 @@ description : ""
     {% for summit in site.data.summit %}
     <a href="{{ summit.slug | prepend: '/summits/' | relative_url }}" class="mountain-card" style="background-image: url('{{ summit.image | prepend: '/assets' | relative_url }}');">
         <div class="mountain-overlays">
-            <h2 class="content__title"> {{ summit.name }}</h2>
-            <!-- <p>Elevation: {{ summit.elevation }} meters</p> -->
-            <!-- <p>Country: {{ summit.country }}</p> -->
-            <!-- <p>Year: {{ summit.year }}</p> -->
+            <h2 class="content__title" style="font-size: 2em;"> {{ summit.name }}</h2>
+            <p class="summit-details">Elevation: {{ summit.elevation }} meters</p>
+            <p class="summit-details">Country: {{ summit.country }}</p>
+            <p class="summit-details">Year: {{ summit.year }}</p>
         </div>
     </a>
+
     {% endfor %}
+
+
+
 </div>
+
 
 </div>
 

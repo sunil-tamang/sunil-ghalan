@@ -1,12 +1,12 @@
 - name: Lobuche Peak
-  elevation: 8848
+  elevation: 6,119 
   country: Nepal
   year: 2018
-  image: "/css/images/everest.jpg" # Adjust the path accordingly
+  image: "/css/images/lobuche.jpg" # Adjust the path accordingly
   slug: lobuche-peak
 
 - name: Ama Dablam
-  elevation: 8611
+  elevation: 6,812 
   country: Nepal
   year: 2019
   image: "/css/images/ama.jpg" # Adjust the path accordingly
@@ -14,23 +14,23 @@
 
 
 - name: Mera Peak
-  elevation: 8611
+  elevation: 6,476
   country: Nepal
   year: 2019
-  image: "/css/images/annapurna.jpg" # Adjust the path accordingly
+  image: "/css/images/mera-peak.jpg" # Adjust the path accordingly
   slug: mera-peak
 
 - name: Everest
-  elevation: 8848
+  elevation: 8,848 
   country: Nepal
   year: 2018
   image: "/css/images/k2.jpg" # Adjust the path accordingly
   slug: everest
 
 
-- name: Pisang Peak
-  elevation: 8611
+- name: Island Peak
+  elevation:  6,165 
   country: Nepal
   year: 2019
-  image: "/css/images/pisang.jpg" # Adjust the path accordingly
+  image: "/css/images/island.jpg" # Adjust the path accordingly
   slug: pisang-peak
