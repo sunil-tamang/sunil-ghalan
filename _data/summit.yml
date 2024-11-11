@@ -1,9 +1,9 @@
-- name: Lobuche Peak
-  elevation: 6,119 
+- name: Baruntse Peak
+  elevation: 7,119 
   country: Nepal
   year: 2018
   image: "/css/images/lobuche.jpg" # Adjust the path accordingly
-  slug: lobuche-peak
+  slug: baruntse-peak
 
 - name: Ama Dablam
   elevation: 6,812 
