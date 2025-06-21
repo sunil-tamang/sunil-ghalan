@@ -64,8 +64,8 @@ description : ""
     <div class="banner-overlay"></div>
     <div class="about-me-content">
      
-      <!-- <h1 class="">Sunil  <span class="selected">Tamang</span></h1>
-      <p>"Rock Climber, Mountaineer and Filmmaker"</p> -->
+      <!-- <h1 class="content__title">HI .</h1>
+      <p>"I'm Sunil Tamang, a passionate mountaineer and filmmaker driven by the adrenaline of exploration. My world revolves around conquering towering peaks and immortalizing breathtaking moments on film. Join me on my quest for adventure!"</p> -->
      
     </div>
     <div class="about-me-img" style="background-image: url('{{ site.baseurl }}/assets/css/images/banner.jpg');"></div>
@@ -122,7 +122,7 @@ description : ""
 
 
 
-<!-- <div class="container-wide row--padding-medium " >
+<div class="container-wide row--padding-medium " >
 
 
 
@@ -133,10 +133,10 @@ description : ""
     {% for summit in site.data.summit %}
     <a href="{{ summit.slug | prepend: '/summits/' | relative_url }}" class="mountain-card" style="background-image: url('{{ summit.image | prepend: '/assets' | relative_url }}');">
         <div class="mountain-overlays">
-            <h2 class="content__title" style="font-size: 2em;"> {{ summit.name }}</h2>
-            <p class="summit-details">Elevation: {{ summit.elevation }} meters</p>
-            <p class="summit-details">Country: {{ summit.country }}</p>
-            <p class="summit-details">Year: {{ summit.year }}</p>
+            <h2 class="content__title"> {{ summit.name }}</h2>
+            <!-- <p class="summit-details">Elevation: {{ summit.elevation }} meters</p> -->
+            <!-- <p class="summit-details">Country: {{ summit.country }}</p> -->
+            <!-- <p class="summit-details">Year: {{ summit.year }}</p> -->
         </div>
     </a>
 
@@ -147,7 +147,7 @@ description : ""
 </div>
 
 
-</div> -->
+</div>
 
 
 

@@ -1,3 +1,10 @@
+- name: Everest
+  elevation: 8,848 
+  country: Nepal
+  year: 2018
+  image: "/css/images/k2.jpg" # Adjust the path accordingly
+  slug: everest
+
 - name: Baruntse Peak
   elevation: 7,119 
   country: Nepal
@@ -20,12 +27,6 @@
   image: "/css/images/mera-peak.jpg" # Adjust the path accordingly
   slug: mera-peak
 
-- name: Everest
-  elevation: 8,848 
-  country: Nepal
-  year: 2018
-  image: "/css/images/k2.jpg" # Adjust the path accordingly
-  slug: everest
 
 
 - name: Island Peak
