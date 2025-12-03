@@ -16,18 +16,22 @@ description : ""
 
 <!--- B-A-N-N-E-R -->
 
+
+
+
+
 <!-- <div class="banner ">
     <img src="/assets/css/images/banner.jpg" alt="Banner Image">
     <div class="overlay"></div>
     <div class="banner-content">
-        <h1>SENSAI <br/> PEMA <br/>WAIBA</h1>
+        <h1>SUNIL TAMANG</h1>
         <p>Your Subtitle or Tagline</p>
     </div>
 </div> -->
 
 
-<!-- 
-{% for summit in site.data.summit %}
+
+<!-- {% for summit in site.data.summit %}
   <div class="card" style="background-image: url('{{ summit.image | prepend: '/assets' | relative_url }}');">
     <div class="overlay">
       <h2><a href="{{ summit.slug | prepend: '/summits/' | relative_url }}">{{ summit.name }}</a></h2>
@@ -39,42 +43,98 @@ description : ""
 {% endfor %} -->
 
 
-<div class="about-me-row container-wide row--padding-wide ">
+{% assign video_slide = site.data.slideshow.slides | where: "type", "video" | first %}
 
-
-
-  <header>
+{% if video_slide %}
+<div class="banner video-banner">
+    <video class="banner-video" autoplay muted loop playsinline preload="auto">
+        <source src="{{ video_slide.src }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <!-- Move header inside the video banner -->
+<header>
     <nav class="navbar">
         <div class="container">
-            <ul class="navbar-nav">
-                <!-- <li class="nav-item"><a href="{{ site.baseurl }}/rock-climbing" class="nav-link">ROCK CLIMBING</a></li> -->
-                <li class="nav-item"><a href="{{ site.baseurl }}/stills" class="nav-link">STILLS</a></li>
-                <li class="nav-item"><a href="{{ site.baseurl }}/films" class="nav-link">FILMS</a></li>
+            <!-- Logo on left -->
+            <div class="navbar-logo">
+                <a href="{{ site.baseurl }}/">
+                    <img src="{{ site.baseurl }}/assets/css/images/logo.png" alt="Sunil Tamang" class="logo">
+                </a>
+            </div>
             
+            <!-- Navigation menu on right -->
+            <ul class="navbar-nav">
+                <!-- <li class="nav-item">
+                    <a href="{{ site.baseurl }}/rock-climbing" class="nav-link">ROCK CLIMBING</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ site.baseurl }}/stills" class="nav-link">STILLS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ site.baseurl }}/films" class="nav-link">FILMS</a>
+                </li> -->
+                <li class="nav-item">
+                    <a href="{{ site.baseurl }}/about" class="nav-link">CONTACT</a>
+                </li>
             </ul>
         </div>
     </nav>
 </header>
+    
+    <div class="overlay">
+        <!-- Rest of your content -->
+        <div class="container-wide row--padding-medium">
+            <div class="menu-block-container">
+                <!-- Your menu blocks -->
+                 <a href="{{ site.baseurl }}/team" class="menu-block">
+                    <div class="menu-block-overlay">
+                        <h2 class="menu-block-title">TEAM</h2>
+                    </div>
+                </a>
+                <a href="{{ site.baseurl }}/films" class="menu-block">
+                    <div class="menu-block-overlay">
+                        <h2 class="menu-block-title">FILMS</h2>
+                    </div>
+                </a>
+                <a href="{{ site.baseurl }}/about" class="menu-block">
+                    <div class="menu-block-overlay">
+                        <h2 class="menu-block-title">ABOUT</h2>
+                    </div>
+                </a>
+                <!-- Other menu blocks -->
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
 
 
 
 
 
-  <div class="about-me-col ">
+
+
+
+
+<!-- <div class="about-me-col ">
     <div class="banner-overlay"></div>
     <div class="about-me-content">
-     
-      <!-- <h1 class="content__title">HI .</h1>
-      <p>"I'm Sunil Tamang, a passionate mountaineer and filmmaker driven by the adrenaline of exploration. My world revolves around conquering towering peaks and immortalizing breathtaking moments on film. Join me on my quest for adventure!"</p> -->
-     
+
+        <h1 class="content__title">HI .</h1>
+        <p>"I'm Sunil Tamang, a passionate mountaineer and filmmaker driven by the
+            adrenaline of exploration. My world revolves around conquering towering peaks
+            and immortalizing breathtaking moments on film. Join me on my quest for
+            adventure!"</p>
+
     </div>
-    <div class="about-me-img" style="background-image: url('{{ site.baseurl }}/assets/css/images/banner.jpg');"></div>
-  </div>
+    <div
+        class="about-me-img"
+        style="background-image: url('{{ site.baseurl }}/assets/css/images/banner.jpg');"></div>
+</div> -->
   
-  <br/><br/>
 
-
-  <!-- <div class="banner-slider">
+<!-- <div class="banner-slider">
     {% for slide in site.data.slideshow.slides %}
       <div class="slide">
         {% if slide.type == "image" %}
@@ -98,32 +158,16 @@ description : ""
         </div>
       </div>
     {% endfor %}
-  </div> -->
-  
-  
-  
- 
-  <!-- <div class="intro-section">
-    
-    <h1 class="content__title">HI .</h1> 
-    <p>Welcome to my world of adventure! I am Sunil Ghalan, an ardent mountaineer and filmmaker, anchored in the very heart of the thrill-seeking spirit. My life's narrative revolves around scaling new heights and capturing awe-inspiring moments that unfold amidst the world's most formidable peaks.</p>
-   
-    <p>Embarking on this extraordinary journey, my pursuit transcends the mere conquest of mountains; it delves into the art of storytelling, vividly painted through the lens of my camera. Each ascent is not just a physical endeavor but a captivating tale waiting to be shared with the world.</p>
-   
-    <p>I'm Sunil Ghalan, a dedicated mountaineer and filmmaker based in the heart of adventure Through my films, I aim to share the raw beauty, challenges, and triumphs of the mountains .Join me on this incredible journey, and let's explore the world together through the eyes of a mountaineer and filmmaker.</p>
- 
-  </div> -->
+  </div>
+   -->
   
 
 
- 
-</div>
 
 
 
 
-<div class="container-wide row--padding-medium " >
-
+<!-- <div class="container-wide row--padding-medium " >
 
 
 
@@ -134,9 +178,9 @@ description : ""
     <a href="{{ summit.slug | prepend: '/summits/' | relative_url }}" class="mountain-card" style="background-image: url('{{ summit.image | prepend: '/assets' | relative_url }}');">
         <div class="mountain-overlays">
             <h2 class="content__title"> {{ summit.name }}</h2>
-            <!-- <p class="summit-details">Elevation: {{ summit.elevation }} meters</p> -->
-            <!-- <p class="summit-details">Country: {{ summit.country }}</p> -->
-            <!-- <p class="summit-details">Year: {{ summit.year }}</p> -->
+            <p class="summit-details">Elevation: {{ summit.elevation }} meters</p>
+            <p class="summit-details">Country: {{ summit.country }}</p>
+            <p class="summit-details">Year: {{ summit.year }}</p>
         </div>
     </a>
 
@@ -147,7 +191,7 @@ description : ""
 </div>
 
 
-</div>
+</div> -->
 
 
 

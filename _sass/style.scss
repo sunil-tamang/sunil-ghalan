@@ -6,6 +6,128 @@ body{
 	color: #333;
 }
 
+
+.video-banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.banner-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.video-banner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(48, 45, 45, 0.5);
+    z-index: 2;
+}
+
+.video-banner .banner-content {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+}
+
+/* WRAPPER */
+.menu-block-container {
+    display: flex;
+    flex-direction: column; /* Mobile default: stack vertically */
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin: 80px auto 0;
+    z-index: 5; /* ensure clickable */
+}
+
+/* BLOCKS */
+.menu-block {
+    width: 90%;           /* Mobile width */
+    max-width: 380px;     /* Prevent oversized blocks */
+    height: 140px;
+    padding: 1em;
+    background: transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    position: relative;
+    transition: transform 0.3s ease, background 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-block:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.15);
+}
+
+/* TEXT */
+.menu-block-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* ----------------------- */
+/*   DESKTOP LAYOUT       */
+/* ----------------------- */
+
+@media (min-width: 768px) {
+
+    .menu-block-container {
+        flex-direction: row;      /* Row layout */
+        justify-content: center;  /* Center three blocks */
+        gap: 40px;
+    }
+
+    .menu-block {
+        width: 30%;
+        min-width: 260px;
+        height: 180px;
+    }
+
+    .menu-block-title {
+        font-size: 34px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .menu-block-title {
+        font-size: 42px;
+    }
+    .menu-block {
+        height: 200px;
+    }
+}
+
+
+
+
 /* Banner Styles */
 .banner {
     position: relative;
@@ -18,7 +140,7 @@ body{
     width: 100%;
     height: 700px;
     display: block; /* Remove any extra space below the image */
-    border-radius: 8px;
+    // border-radius: 8px;
 }
 
 .overlay {
@@ -28,7 +150,7 @@ body{
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 8px;
+    // border-radius: 8px;
 
 }
 
@@ -68,7 +190,7 @@ body{
   .about-me-col {
     max-width: 100%;
     position: relative;
-    border-radius: 8px;
+    // border-radius: 8px;
     overflow: hidden; /* Ensure content does not overflow with rounded corners */
   }
 
@@ -146,7 +268,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  border-radius: 4px;
+  // border-radius: 4px;
   overflow: hidden;
 }
 
@@ -179,13 +301,13 @@ body{
     color: #fff;
     padding: 15px;
     text-align: left;
-    border-radius: 4px;
+    // border-radius: 4px;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
     // justify-content: flex-end;
@@ -235,7 +357,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    border-radius: 2px;
+    // border-radius: 2px;
     overflow: hidden;
 }
 
@@ -264,13 +386,13 @@ body{
     color: #fff;
     padding: 15px;
     text-align: left;
-    border-radius: 8px;
+    // border-radius: 8px;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -433,7 +555,7 @@ p {
   // margin-top: 20px;
   // padding: 20px 0;
   // background-color: #f8f8f8;
-  border-radius: 8px;
+  // border-radius: 8px;
   font-size: 16px;
   line-height: 1.6;
 }
@@ -540,7 +662,7 @@ p {
 .slide img {
   width: 100%;
   height: auto;
-  border-radius: 5px; /* Optional: Add rounded corners to images */
+  // border-radius: 5px; /* Optional: Add rounded corners to images */
 }
 
 .caption {
@@ -552,8 +674,8 @@ p {
   bottom: 0;
   left: 0;
   width: 100%;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  // border-bottom-left-radius: 5px;
+  // border-bottom-right-radius: 5px;
 }
 
 /* Styles for progress bar */
@@ -606,7 +728,7 @@ p {
     width: 100%;
     max-height: 300px; /* Adjust the max-height as needed */
     object-fit: cover; /* Maintain aspect ratio and cover container */
-    border-radius: 8px; /* Optional: Add rounded corners */
+    // border-radius: 8px; /* Optional: Add rounded corners */
 }
 
 
@@ -630,7 +752,7 @@ p {
   width: 100%;
   height: 400px;
   object-fit: cover;
-  border-radius: 8px !important;
+  // border-radius: 8px !important;
   transition: transform 0.5s ease-in-out;
 }
 
@@ -647,7 +769,7 @@ p {
   align-items: center;
   flex-direction: column;
   pointer-events: none;
-  border-radius: 8px;
+  // border-radius: 8px;
   text-align: center;
   padding: 20px;
   transition: opacity 0.5s ease-in-out;
@@ -730,7 +852,39 @@ p {
 
 
 
+/* Fix for header positioning */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Higher than video's z-index */
+}
 
+.navbar {
+    background: transparent; /* Make navbar transparent */
+    padding: 1em 0;
+}
+
+.navbar .container {
+    padding: 1em 0; /* Reduce padding if needed */
+}
+
+.nav-link {
+    font-family: Tasaorbiterdeck, sans-serif;
+    color: #000;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 24px;
+    text-decoration: none;
+    font-size: 12px;
+    color: white !important; /* Make links visible on video */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Add shadow for better visibility */
+}
+
+.nav-link:hover {
+    color: #fb4a4a !important; /* Change color on hover */
+}
 
 
 
@@ -774,7 +928,7 @@ p {
 .nav-link {
   // color: white; /* Set color for the links */
   text-decoration: none;
-  font-size: 1em;
+  // font-size: 1em;
 }
 
 .nav-link:hover {
@@ -789,4 +943,95 @@ p {
     display:contents;
   }
 
+}
+
+
+.video-banner .overlay {
+    pointer-events: none;   /* let clicks pass through */
+}
+
+.menu-block-container, 
+.menu-block {
+    pointer-events: auto;   /* allow clicking on links */
+}
+
+
+
+
+
+
+/* Make video banner relative for proper stacking */
+.video-banner {
+    position: relative;
+}
+
+/* Ensure header stays on top */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 20px 0;
+}
+
+/* Logo Styling */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px; /* Adjust based on your logo */
+    width: auto;
+    max-height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* For text logo instead of image */
+.navbar-brand-text {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Container layout for logo + menu */
+.navbar .container {
+    display: flex;
+    justify-content: space-between; /* Logo left, menu right */
+    align-items: center;
+    padding: 1.5em 2em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        padding: 1em;
+    }
+    
+    .navbar-logo {
+        margin-bottom: 1em;
+    }
+    
+    .logo {
+        height: 35px;
+    }
+}
+
+/* If you want a transparent logo effect for video background */
+.logo-light {
+    filter: brightness(0) invert(1); /* Makes logo white */
+}
+
+/* For dark backgrounds on other pages */
+.logo-dark {
+    filter: brightness(0); /* Makes logo black */
 }

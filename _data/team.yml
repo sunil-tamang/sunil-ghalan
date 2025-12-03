@@ -1,0 +1,17 @@
+- id: 1
+  name: "Alex Johnson"
+  photo: "/assets/images/team/alex.jpg"
+  position: "Creative Director"
+  department: "Design"
+  
+- id: 2
+  name: "Maria Chen"
+  photo: "/assets/images/team/maria.jpg"
+  position: "Lead Developer"
+  department: "Engineering"
+  
+- id: 3
+  name: "David Wilson"
+  photo: "/assets/images/team/david.jpg"
+  position: "Project Manager"
+  department: "Operations"
