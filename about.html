@@ -22,7 +22,7 @@ custom_bg: bg/about0.jpg
              controlsList="nodownload nofullscreen noremoteplayback"
             oncontextmenu="return false;"
            poster="/assets/css/images/banner.jpg">
-        <source src="{{ second_video.src }}" type="video/mp4">
+        <source src="{{ site.baseurl }}{{ second_video.src }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <div class="video-debug">🎬 Using: {{ second_video.src }}</div>
