@@ -68,7 +68,35 @@ layout: compress
 
 <body>
 
-
+            <!-- Move header inside the video banner -->
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <!-- Logo on left -->
+            <div class="navbar-logo">
+                <a href="{{ site.baseurl }}/">
+                    <img src="{{ site.baseurl }}/assets/css/images/logo.png" alt="Sunil Tamang" class="logo">
+                </a>
+            </div>
+            
+            <!-- Navigation menu on right -->
+            <ul class="navbar-nav">
+                <!-- <li class="nav-item">
+                    <a href="{{ site.baseurl }}/rock-climbing" class="nav-link">ROCK CLIMBING</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ site.baseurl }}/stills" class="nav-link">STILLS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ site.baseurl }}/films" class="nav-link">FILMS</a>
+                </li> -->
+                <li class="nav-item">
+                    <a href="{{ site.baseurl }}/contact" class="nav-link">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
     {{ content }}
 

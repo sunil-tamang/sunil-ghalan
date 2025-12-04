@@ -47,40 +47,14 @@ description : ""
 
 {% if video_slide %}
 <div class="banner video-banner">
-    <video class="banner-video" autoplay muted loop playsinline preload="auto">
-        <source src="{{ video_slide.src }}" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <video class="banner-video"
+       autoplay muted loop playsinline preload="auto"
+       controlsList="nodownload nofullscreen noremoteplayback"
+       oncontextmenu="return false;">
+      <source src="{{ video_slide.src }}" type="video/mp4">
+    </video>  
     
-    <!-- Move header inside the video banner -->
-<header>
-    <nav class="navbar">
-        <div class="container">
-            <!-- Logo on left -->
-            <div class="navbar-logo">
-                <a href="{{ site.baseurl }}/">
-                    <img src="{{ site.baseurl }}/assets/css/images/logo.png" alt="Sunil Tamang" class="logo">
-                </a>
-            </div>
-            
-            <!-- Navigation menu on right -->
-            <ul class="navbar-nav">
-                <!-- <li class="nav-item">
-                    <a href="{{ site.baseurl }}/rock-climbing" class="nav-link">ROCK CLIMBING</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ site.baseurl }}/stills" class="nav-link">STILLS</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ site.baseurl }}/films" class="nav-link">FILMS</a>
-                </li> -->
-                <li class="nav-item">
-                    <a href="{{ site.baseurl }}/contact" class="nav-link">CONTACT</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
+
     
     <div class="overlay">
         <!-- Rest of your content -->
@@ -256,4 +230,30 @@ description : ""
 </script>
 	
 	
-	
+	<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const video = document.querySelector(".banner-video");
+    const banner = document.querySelector(".video-banner");
+
+    if (!video || !banner) return;
+
+    /* Fade-in when video loads */
+    video.addEventListener("loadeddata", () => {
+        banner.style.opacity = "1";
+    });
+
+    /* Fallback if video fails */
+    video.addEventListener("error", () => {
+        banner.style.background = "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%)";
+    });
+
+    /* Disable right-click on video */
+    video.addEventListener("contextmenu", (e) => e.preventDefault());
+
+    /* Disable right-click on the entire banner */
+    banner.addEventListener("contextmenu", (e) => e.preventDefault());
+
+    /* Disable ALL mouse interactions on video */
+    video.style.pointerEvents = "none";
+});
+</script>
