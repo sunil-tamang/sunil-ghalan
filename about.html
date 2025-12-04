@@ -9,8 +9,68 @@ subtitle2: "Begins"
 custom_bg: bg/about0.jpg
 ---
 
- <!----------Our Story -------->
 
 
+{% assign video_slides = site.data.slideshow.slides | where: "type", "video" %}
+{% assign second_video = video_slides[1] %} <!-- Index 1 = second video -->
 
-ABOUT
+<section class="video-banner">
+    <!-- Using the SECOND video (bannero.mp4) -->
+    {% if second_video %}
+    <video class="video-background" autoplay muted loop playsinline 
+           poster="/assets/css/images/banner.jpg">
+        <source src="{{ second_video.src }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="video-debug">🎬 Using: {{ second_video.src }}</div>
+    {% else %}
+    <!-- Fallback if second video not found, try first video -->
+    {% assign first_video = video_slides[0] %}
+    {% if first_video %}
+    <video class="video-background" autoplay muted loop playsinline 
+           poster="/assets/css/images/banner.jpg">
+        <source src="{{ first_video.src }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="video-debug">🎬 Using first video as fallback: {{ first_video.src }}</div>
+    {% else %}
+    <!-- Ultimate fallback to image -->
+    <div class="video-fallback" style="background: url('/assets/css/images/banner.jpg') center/cover no-repeat;"></div>
+    <div class="video-debug">⚠️ No video found, using image fallback</div>
+    {% endif %}
+    {% endif %}
+    
+    <!-- Dark Overlay -->
+    <div class="video-overlay"></div>
+    
+    <!-- Improved Text Content -->
+    <div class="text-container">
+        <h1 class="main-headline">
+            <!-- <span class="line-1">WE TELL STORIES THAT</span> -->
+            <span class="line-2">EXPLORE THE UNKNOWN.</span>
+        </h1>
+        <div class="separator"></div>
+        <p class="sub-headline">
+            <span class="line-1">Bringing Adventure to Life,</span>
+            <span class="line-2">One Frame at a Time.</span>
+        </p>
+    </div>
+</section>
+
+
+    <script>
+        // Optional: Add video loading state
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.querySelector('.video-background');
+            const banner = document.querySelector('.video-banner');
+            
+            video.addEventListener('loadeddata', function() {
+                banner.style.opacity = 1;
+            });
+            
+            // Fallback if video fails to load
+            video.addEventListener('error', function() {
+                banner.style.background = 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%)';
+            });
+        });
+    </script>
