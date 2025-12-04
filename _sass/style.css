@@ -3,6 +3,118 @@ body {
   color: #333;
 }
 
+.video-banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.banner-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.video-banner .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(48, 45, 45, 0.5);
+  z-index: 2;
+}
+
+.video-banner .banner-content {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+}
+
+/* WRAPPER */
+.menu-block-container {
+  display: flex;
+  flex-direction: column; /* Mobile default: stack vertically */
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin: 80px auto 0;
+  z-index: 5; /* ensure clickable */
+}
+
+/* BLOCKS */
+.menu-block {
+  width: 90%; /* Mobile width */
+  max-width: 380px; /* Prevent oversized blocks */
+  height: 140px;
+  padding: 1em;
+  background: transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  position: relative;
+  transition: transform 0.3s ease, background 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-block:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* TEXT */
+.menu-block-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ----------------------- */
+/*   DESKTOP LAYOUT       */
+/* ----------------------- */
+@media (min-width: 768px) {
+  .menu-block-container {
+    flex-direction: row; /* Row layout */
+    justify-content: center; /* Center three blocks */
+    gap: 40px;
+  }
+  .menu-block {
+    width: 30%;
+    min-width: 260px;
+    height: 180px;
+  }
+  .menu-block-title {
+    font-size: 34px;
+  }
+}
+@media (min-width: 1200px) {
+  .menu-block-title {
+    font-size: 42px;
+  }
+  .menu-block {
+    height: 200px;
+  }
+}
 /* Banner Styles */
 .banner {
   position: relative;
@@ -13,7 +125,7 @@ body {
 
 .banner img {
   width: 100%;
-  height: auto;
+  height: 700px;
   display: block; /* Remove any extra space below the image */
 }
 
@@ -23,7 +135,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .banner-content {
@@ -37,7 +149,7 @@ body {
 
 /* Adjust font sizes for responsiveness */
 .banner-content h1 {
-  font-size: 12em;
+  font-size: 1.5em;
   margin: 0; /* Remove default margin to avoid spacing issues */
   font-family: "Comfortaa", sans-serif;
   font-weight: bold;
@@ -57,13 +169,12 @@ body {
 .about-me-col {
   max-width: 100%;
   position: relative;
-  border-radius: 8px;
   overflow: hidden; /* Ensure content does not overflow with rounded corners */
 }
 
 .about-me-col {
   max-width: 100%;
-  height: 700px;
+  height: 80vh;
 }
 
 .about-me-img {
@@ -73,15 +184,37 @@ body {
   background-position: center;
 }
 
+.about-me-content h1 {
+  font-size: 1.7em;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
 @media (min-width: 48em) {
   .about-me-col {
+    max-width: 100%;
+    height: 500px;
+  }
+  .about-me-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  .about-me-col {
     margin-top: 2em;
+  }
+  .about-me-content h1 {
+    font-size: 2.5em; /* Adjust the font size as needed */
+  }
+  .about-me-content p {
+    font-size: 1.2em; /* Adjust the font size as needed */
   }
 }
 .mountain-cards-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
+  flex-wrap: wrap !important;
+  gap: 1.5em;
 }
 
 .mountain-card {
@@ -89,21 +222,24 @@ body {
   background-size: cover;
   background-position: center;
   margin-bottom: 20px;
-  height: 12vw;
-  width: 440px;
+  height: 10vw;
+  width: 45%;
   text-decoration: none;
   color: inherit;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  border-radius: 8px;
+  justify-content: space-around;
   overflow: hidden;
 }
 
 /* Media query for small devices */
-@media screen and (max-width: 768px) {
+@media (min-width: 48em) {
   .mountain-card {
-    height: 250px; /* Adjust the height to fit content */
+    height: 10vw; /* Adjust the height to fit content */
+    width: 380px;
+  }
+  .mountain-cards-container {
+    flex-wrap: nowrap;
   }
 }
 .mountain-overlays {
@@ -111,24 +247,24 @@ body {
   color: #fff;
   padding: 15px;
   text-align: left;
-  border-radius: 8px;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  gap: 2em;
+  font-size: 0.2em;
 }
 
 .mountain-title {
   margin: 0;
 }
 
-p {
-  margin: 5px 0;
+.mountain-overlays .summit-details {
+  font-size: 0.2em !important;
 }
 
 .mountain-card:hover .mountain-overlays {
@@ -153,7 +289,6 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -176,13 +311,12 @@ p {
   color: #fff;
   padding: 15px;
   text-align: left;
-  border-radius: 8px;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -227,10 +361,8 @@ p {
 .content__sub-title {
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  text-transform: none;
   display: inline-block;
   padding-bottom: 1.5em;
-  padding-top: 20px;
   position: relative;
   line-height: 1.5em;
 }
@@ -239,10 +371,8 @@ p {
 .content__sub-title_child {
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  text-transform: none;
   display: inline-block;
   padding-bottom: 0.7em;
-  padding-top: 40px;
   position: relative;
   line-height: 1.5em;
   font-family: "ANTON", sans-serif;
@@ -295,6 +425,15 @@ p {
   bottom: 0;
   right: 0;
   padding: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.portfolio-footer p {
+  color: rgba(51, 51, 51, 0.2196078431);
+  text-decoration: none;
 }
 
 .portfolio-footer a {
@@ -309,11 +448,29 @@ p {
 }
 
 .intro-section {
-  margin-top: 20px;
-  padding: 20px;
-  border-radius: 8px;
   font-size: 16px;
   line-height: 1.6;
+}
+
+.photo-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-top: 5em;
+  width: 100%;
+}
+
+.photo-item {
+  width: 46.5%;
+}
+
+.photo-item img {
+  height: auto;
+  width: 100%;
+}
+
+.photo-item h2 {
+  padding: 1em 0;
 }
 
 .about-me-col {
@@ -326,23 +483,538 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+  background: rgba(0, 0, 0, 0.3); /* Adjust the opacity as needed */
 }
 
 .about-me-content {
   position: absolute;
-  top: 50%;
-  left: 10%; /* Adjust the left position as needed */
+  bottom: 0%;
+  left: 2%; /* Adjust the left position as needed */
   transform: translateY(-50%);
   color: #fff; /* Set the text color */
-  max-width: 60%; /* Adjust the maximum width as needed */
-}
-
-.about-me-content h1 {
-  font-size: 2.5em; /* Adjust the font size as needed */
-  margin-bottom: 10px;
+  max-width: 100%; /* Adjust the maximum width as needed */
+  text-align: left;
 }
 
 .about-me-content p {
-  font-size: 1.2em; /* Adjust the font size as needed */
+  font-size: 1em; /* Adjust the font size as needed */
+}
+
+@media (min-width: 48em) {
+  .about-me-content {
+    position: absolute;
+    bottom: 0%;
+    left: 2%;
+    transform: translateY(-50%);
+    color: #fff;
+    max-width: 60%;
+  }
+  .photo-item {
+    width: 300px;
+  }
+}
+/* Styles for the expedition details */
+.expedition-details {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Styles for the slideshow */
+.slideshow {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* Styles for progress bar */
+.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-bar {
+  width: 50px; /* Set your desired width */
+  height: 5px; /* Set your desired height */
+  background: #ccc; /* Set your desired background color */
+  border-radius: 2px; /* Set your desired border radius */
+  position: relative;
+}
+
+.slide-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff; /* Set your desired text color */
+}
+
+/* Customize slide container */
+.slider {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Customize slide styles */
+.slider div {
+  text-align: center;
+}
+
+/* Customize image styles */
+.slider img {
+  width: 100%;
+  max-height: 300px; /* Adjust the max-height as needed */
+  -o-object-fit: cover;
+     object-fit: cover; /* Maintain aspect ratio and cover container */
+}
+
+.banner-slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.banner-slider .slide {
+  position: relative;
+}
+
+.banner-slider img,
+.banner-slider video {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  pointer-events: none;
+  text-align: center;
+  padding: 20px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.overlay-text {
+  font-size: 1.5em;
+}
+
+.additional-info {
+  margin-top: 10px;
+  font-size: 1em;
+  color: #ccc;
+}
+
+.play-button {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-top: 10px;
+  pointer-events: auto; /* Ensure button is clickable */
+  transition: transform 0.3s ease-in-out;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+
+.slick-next, .slick-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.slick-next {
+  right: 10px;
+}
+
+.slick-prev {
+  left: 10px;
+}
+
+.fullscreen-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: black;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.selected {
+  background-color: #fb4a4a;
+  padding: 0 0.3rem;
+  border-radius: 2px;
+}
+
+/* Fix for header positioning */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Higher than video's z-index */
+}
+
+.navbar {
+  background: transparent; /* Make navbar transparent */
+  padding: 1em 0;
+}
+
+.navbar .container {
+  padding: 1em 0; /* Reduce padding if needed */
+}
+
+.nav-link {
+  font-family: Tasaorbiterdeck, sans-serif;
+  color: #000;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 24px;
+  text-decoration: none;
+  font-size: 12px;
+  color: white !important; /* Make links visible on video */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add shadow for better visibility */
+}
+
+.nav-link:hover {
+  color: #fb4a4a !important; /* Change color on hover */
+}
+
+.navbar {
+  overflow: hidden;
+  text-align: center; /* Center text in the navbar */
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 3em 0;
+  gap: 1em;
+}
+
+.navbar-brand {
+  text-decoration: none;
+  font-size: 2em;
+  margin-bottom: 10px; /* Add some space between the brand and the links */
+}
+
+.navbar-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: 1em;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline; /* Add underline on hover if needed */
+}
+
+@media (min-width: 48em) {
+  .navbar {
+    display: contents;
+  }
+}
+.video-banner .overlay {
+  pointer-events: none; /* let clicks pass through */
+}
+
+.menu-block-container,
+.menu-block {
+  pointer-events: auto; /* allow clicking on links */
+}
+
+/* Make video banner relative for proper stacking */
+.video-banner {
+  position: relative;
+}
+
+/* Ensure header stays on top */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 20px 0;
+}
+
+/* Logo Styling */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px; /* Adjust based on your logo */
+  width: auto;
+  max-height: 50px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* For text logo instead of image */
+.navbar-brand-text {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Container layout for logo + menu */
+.navbar .container {
+  display: flex;
+  justify-content: space-between; /* Logo left, menu right */
+  align-items: center;
+  padding: 1.5em 2em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar .container {
+    flex-direction: column;
+    padding: 1em;
+  }
+  .navbar-logo {
+    margin-bottom: 1em;
+  }
+  .logo {
+    height: 35px;
+  }
+}
+/* If you want a transparent logo effect for video background */
+.logo-light {
+  filter: brightness(0) invert(1); /* Makes logo white */
+}
+
+/* For dark backgrounds on other pages */
+.logo-dark {
+  filter: brightness(0); /* Makes logo black */
+}
+
+.contact-page {
+  padding: 2rem 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #333;
+  line-height: 1.3;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-header {
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+}
+
+.contact-header .page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  letter-spacing: -0.5px;
+}
+
+.contact-header .page-subtitle {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 400;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 3rem 2rem;
+}
+
+.contact-item {
+  position: relative;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.contact-item h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  color: #222;
+  line-height: 1.2;
+}
+
+.contact-role {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.contact-email {
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.contact-email a {
+  color: #0066cc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.contact-email a:hover {
+  text-decoration: underline;
+  color: #0052a3;
+}
+
+.contact-slug {
+  font-size: 0.9rem;
+  color: #999;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.contact-section {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.contact-section h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  color: #222;
+  line-height: 1.2;
+}
+
+.contact-section .contact-info {
+  margin: 0.5rem 0;
+  line-height: 1.2;
+}
+
+.contact-section .contact-info strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.contact-notice {
+  grid-column: 1/-1;
+  padding: 1.5rem;
+  border: 1px solid #e9ecef;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+.contact-notice h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+  color: #222;
+}
+
+.contact-notice .notice-text {
+  font-size: 1rem;
+  color: #666;
+  font-style: italic;
+  padding: 0;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 1rem;
+  }
+  .contact-header {
+    margin-bottom: 2rem;
+  }
+  .contact-header .page-title {
+    font-size: 2rem;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .contact-slug {
+    position: static;
+    display: block;
+    margin-top: 0.75rem;
+  }
+}
+@media (max-width: 480px) {
+  .contact-header .page-title {
+    font-size: 1.75rem;
+  }
+  .contact-item h2,
+  .contact-section h2 {
+    font-size: 1.4rem;
+  }
+  .contact-notice {
+    padding: 1.25rem;
+  }
 }/*# sourceMappingURL=style.css.map */

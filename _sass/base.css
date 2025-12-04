@@ -11,7 +11,7 @@ html, body {
 
 h1 {
   font-size: 1.7em;
-  font-family: "Lato", sans-serif;
+  font-family: "ANTON", sans-serif;
   font-weight: 200;
 }
 
@@ -74,4 +74,8 @@ a, .no-select {
 
 .hover:hover {
   color: #428bca;
+}
+
+h2 {
+  font-family: Tasaorbiterdeck, sans-serif;
 }/*# sourceMappingURL=base.css.map */
