@@ -8,7 +8,7 @@ layout: default
 
   <!-- Hero / Poster -->
   <div class="film-hero" style="text-align: center; margin-bottom: 40px;">
-    <img src="{{ film.poster | default: film.thumbnail }}" alt="{{ film.title | escape }}" style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+    <img src="{{ site.baseurl }}{{ film.poster | default: film.thumbnail }}" alt="{{ film.title | escape }}" style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
   </div>
 
   <!-- Film Info -->
@@ -22,7 +22,7 @@ layout: default
     </p>
 
     {% if film.video_url %}
-      <a href="{{ film.video_url }}" target="_blank" rel="noopener" style="display: inline-block; padding: 12px 30px; background: #e50914; color: #fff; font-weight: 700; border-radius: 6px; text-decoration: none; transition: background 0.3s;">
+      <a href="{{ site.baseurl }}{{ film.video_url }}" target="_blank" rel="noopener" style="display: inline-block; padding: 12px 30px; background: #e50914; color: #fff; font-weight: 700; border-radius: 6px; text-decoration: none; transition: background 0.3s;">
         ▶ Watch Film
       </a>
     {% endif %}
