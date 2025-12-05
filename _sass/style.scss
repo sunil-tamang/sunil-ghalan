@@ -1,12 +1,3 @@
-body{
-    background: #FFFFFF;
-    // background: #080808;
-    // background: #06080b;
-    // background: #f0f0f0;
-	color: #333;
-}
-
-
 .video-banner {
     position: relative;
     width: 100%;
@@ -947,7 +938,7 @@ header {
 
 
 .video-banner .overlay {
-    pointer-events: none;   /* let clicks pass through */
+    // pointer-events: none;   /* let clicks pass through */
 }
 
 .menu-block-container, 
@@ -1222,17 +1213,8 @@ header {
 
 
 
-
-
-* {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
         
-
-        
-        /* Video Background */
+        /* About Video Background */
         .video-banner {
             position: relative;
             width: 100%;
@@ -1423,18 +1405,27 @@ header {
             filter: brightness(0.7) contrast(1.1);
         }
 
-// .video-banner * {
-//     pointer-events: none;
-// }
-
-.video-background {
-    pointer-events: none;
-}
-
-
-.text-container {
+.video-banner {
     pointer-events: auto;
 }
+
+.video-banner * {
+    pointer-events: auto;   /* FULLY FIXES CLICKS & HOVERS */
+}
+
+.video-background {
+    pointer-events: none !important; /* video stays unclickable */
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1513,13 +1504,17 @@ header {
 
 
 
-
-
+// Team Page Css
 
 .team-banner {
     position: relative;
     height: 100vh;
     overflow: hidden;
+    pointer-events: auto;
+}
+
+.team-banner * {
+    pointer-events: auto;
 }
 
 .team-banner video {
@@ -1528,17 +1523,16 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    pointer-events: none; /* prevents right-click + blocking links */
 }
 
-/* Dark overlay on top of video */
 .video-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.45); /* adjust darkness here */
+    background: rgba(0,0,0,0.45);
     z-index: 2;
 }
 
-/* Single image overlay */
 .photo-overlay {
     position: absolute;
     inset: 0;
@@ -1546,18 +1540,15 @@ header {
     background-position: center;
     opacity: 0;
     transition: opacity .4s ease;
-    pointer-events: none;
     z-index: 3;
+    pointer-events: none;
 }
 
 .team-names {
-    position: relative;
+    position: absolute;
+    top: 20%;
+    left: 60px;
     z-index: 4;
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    padding-left: 70px;
-    top: 15%;
 }
 
 .team-member {
@@ -1566,6 +1557,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 6px;
+    margin-bottom: 30px;
 }
 
 .team-member .role {
@@ -1584,19 +1576,52 @@ header {
     opacity: 0.8;
 }
 
-@media (max-width: 768px) {
-    .team-member .name {
-        font-size: 30px;
-    }
+
+
+// Film page css
+.work-container {
+  padding: 40px 20px;
 }
 
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
 
+.work-item {
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform .3s ease;
+}
 
+.work-item:hover {
+  transform: translateY(-6px);
+}
 
+.work-thumb {
+  width: 100%;
+  display: block;
+}
 
+.work-info {
+  padding: 20px;
+}
 
+.film-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
 
+.film-meta {
+  opacity: .6;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
 
-
-
-
+.film-desc {
+  font-size: 15px;
+  line-height: 1.4;
+}

@@ -14,20 +14,20 @@ custom_bg: bg/about0.jpg
 <section class="team-banner">
 
     <!-- Background Video -->
-    <video id="teamVideo" autoplay muted loop playsinline>
-        <source src="{{ site.baseurl }}/assets/css/video/banner.mp4" type="video/mp4">
+    <video id="teamVideo" autoplay muted loop playsinline oncontextmenu="return false;">
+        <source src="{{ site.baseurl }}/assets/css/video/bannero.mp4" type="video/mp4">
     </video>
 
-    <!-- Dark Overlay ON TOP of video -->
+    <!-- Dark Overlay -->
     <div class="video-overlay"></div>
 
-    <!-- Changing Photo Overlay -->
+    <!-- Changing Image Overlay -->
     <div class="photo-overlay"></div>
 
     <!-- Names + Titles -->
     <div class="team-names">
 
-        <a href="/team/renan/" class="team-member" 
+        <a href="/team/renan/" class="team-member"
            data-photo="/assets/css/images/team/renan.jpg">
             <div class="role">CO-FOUNDER / DIRECTOR</div>
             <div class="name">RENAN OZTURK</div>
@@ -52,23 +52,26 @@ custom_bg: bg/about0.jpg
 
 
 
+
 <script>
+
 const overlay = document.querySelector(".photo-overlay");
 const video = document.getElementById("teamVideo");
 
-// Hover image logic
 document.querySelectorAll(".team-member").forEach(member => {
     member.addEventListener("mouseenter", () => {
         overlay.style.backgroundImage = `url(${member.dataset.photo})`;
         overlay.style.opacity = 1;
-        video.pause();
+
+        if (video) video.pause();
     });
+
     member.addEventListener("mouseleave", () => {
         overlay.style.opacity = 0;
-        video.play();
+
+        if (video) video.play();
     });
 });
 
-// Disable right-click on video
-video.addEventListener("contextmenu", e => e.preventDefault());
+
 </script>
