@@ -1,26 +1,27 @@
 ebc-night:
-  title: "Everest Base Camp Night Drone"
-  year: 2024
+  title: "Expedição ao Everest - V8.Tech"
+  year: 2025
   category: "Documentary"
-  duration: "3 min"
+  duration: "7:55 min"
   thumbnail: "/assets/css/images/films/everest.jpg"
   poster: "/assets/css/images/films/everest.jpg"
-  video_url: "https://www.youtube.com/watch?v=zEev2JqHGns&t=1s"
-  description: "A cinematic drone film shot under the star-filled night sky of Everest Base Camp."
+  video_url: "https://www.youtube.com/watch?v=RcA4YabQgxU"
+  description: "Expedition to Everest (May/2025), led by Rodrigo Xavier, CEO of V8.Tech, with the bold objective of reaching the top of the world in under 30 days, challenging physical and mental limits in one of the most intense journeys ever undertaken by a Brazilian. After a month of pre-acclimatization in a hypoxic chamber and meticulously planned logistics, Rodrigo faced extreme temperatures, death zones, aerial rescues, and his own human vulnerability at over 8,000 meters of altitude. His journey took place on the greatest symbol of world mountaineering, set against a backdrop of fear, overcoming, and love for life and family. "
   tags:
     - drone
     - documentary
     - himalayas
 
 ama-dablam:
-  title: "AMA Dablam"
-  year: 2023
-  category: "Street Film"
-  duration: "5 min"
-  thumbnail: "/assets/css/images/films/amadablam.jpg"
-  poster: "/assets/css/images/films/amadablam.jpg"
-  video_url: "https://youtube.com/yyy"
-  description: "A raw, gritty look at the streets of Kathmandu."
+  title: "A jornada continua e o cume nos espera!"
+  year: 2025
+  category: "Documentary"
+  duration: "24:53 min"
+  thumbnail: "/assets/css/images/films/everest-dacio.jpg"
+  poster: "/assets/css/images/films/everest-dacio.jpg"
+  video_url: "https://www.youtube.com/watch?v=fFi2UAhg8lM&t=22s"
+  description: "Follow Decio Gomes, President of the DVG Group, on his audacious journey to the top of Mount Everest. This is more than a climbing film—it is a raw, intimate portrait of a leader applying the core principles of business—strategy, resilience, and mental fortitude—in the most extreme environment on Earth."
   tags:
-    - street
     - cinematic
+    - drone 
+    - fpv

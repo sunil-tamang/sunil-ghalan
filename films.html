@@ -14,7 +14,7 @@ permalink: /films/
       {% assign film = pair[1] %}
 
       <article class="film-card" style="background: #1a1a1a; border-radius: 12px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;">
-        <a href="{{site.baseurl}}{{ '/films/' | append: slug | append: '/' | relative_url }}" style="display: block; text-decoration: none; color: inherit;">
+        <a href="{{ '/films/' | append: slug | append: '/' | relative_url }}" style="display: block; text-decoration: none; color: inherit;">
           
           <img src="{{ film.thumbnail | relative_url }}" alt="{{ film.title | escape }}" style="width: 100%; display: block; object-fit: cover; height: 180px;">
 
