@@ -20,17 +20,13 @@ collections:
     image: true
     permalink: /summits/:name/
 
-collections:
   films:
     output: true
     permalink: /films/:name/
 
-collections:
   team:
     output: true
     permalink: /team/:name/
-
-
 
 defaults:
   - scope:

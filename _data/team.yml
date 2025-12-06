@@ -1,17 +1,17 @@
 - id: renan
-  name: Renan Ozturk
+  name: SUNIL TAMANG
   role: CO-FOUNDER / DIRECTOR
   hover_image: /assets/css/images/team/renan.jpg
   photo: /assets/css/images/team/renan.jpg
 
 - id: taylor
-  name: Taylor Rees
+  name: PASANG SHERPA
   role: CO-FOUNDER / DIRECTOR
   hover_image: /assets/css/images/team/taylor.jpg
   # photo: /assets/css/images/team/taylor-profile.jpg
 
 - id: eric
-  name: Eric Crosland
+  name: MINGMA SHERPA
   role: DIRECTOR
   hover_image: /assets/css/images/team/eric.jpg
   photo: /assets/css/images/team/eric.jpg
