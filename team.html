@@ -23,10 +23,11 @@ permalink: /team/
         {% for member in site.data.team %}
         <a href="{{ site.baseurl }}/team/{{ member.id }}/"
            class="team-member"
-           data-photo="{{ member.hover_image }}">
+           data-photo="{{ site.baseurl }}{{ member.hover_image }}">
             <div class="role">{{ member.role }}</div>
             <div class="name"><h2 class="menu-block-title">{{ member.name }}</h2></div>
         </a>
+        
         {% endfor %}
 
     </div>
