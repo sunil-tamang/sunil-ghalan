@@ -9,47 +9,54 @@ subtitle2: "Begins"
 custom_bg: bg/about0.jpg
 ---
 
-
-
 {% assign video_slides = site.data.slideshow.slides | where: "type", "video" %}
-{% assign second_video = video_slides[1] %} <!-- Index 1 = second video -->
+{% assign second_video = video_slides[1] %}
 
 <section class="video-banner">
-    <!-- Using the SECOND video (bannero.mp4) -->
+
+    <!-- SECOND video -->
     {% if second_video %}
     <video class="video-background"
-             autoplay muted loop playsinline
-             controlsList="nodownload nofullscreen noremoteplayback"
-            oncontextmenu="return false;"
-           poster="/assets/css/images/banner.jpg">
+           autoplay muted loop playsinline
+           controlsList="nodownload nofullscreen noremoteplayback"
+           oncontextmenu="return false;"
+           poster="{{ site.baseurl }}/assets/css/images/banner.jpg">
         <source src="{{ site.baseurl }}{{ second_video.src }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <div class="video-debug">🎬 Using: {{ second_video.src }}</div>
+    <div class="video-debug">🎬 Using second video: {{ second_video.src }}</div>
+
     {% else %}
-    <!-- Fallback if second video not found, try first video -->
+
     {% assign first_video = video_slides[0] %}
+
     {% if first_video %}
-    <video class="video-background" autoplay muted loop playsinline 
-           poster="/assets/css/images/banner.jpg">
-        <source src="{{ first_video.src }}" type="video/mp4">
+    <!-- Fallback video -->
+    <video class="video-background"
+           autoplay muted loop playsinline
+           controlsList="nodownload nofullscreen noremoteplayback"
+           oncontextmenu="return false;"
+           poster="{{ site.baseurl }}/assets/css/images/banner.jpg">
+        <source src="{{ site.baseurl }}{{ first_video.src }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <div class="video-debug">🎬 Using first video as fallback: {{ first_video.src }}</div>
+    <div class="video-debug">🎬 Using fallback (first video): {{ first_video.src }}</div>
+
     {% else %}
-    <!-- Ultimate fallback to image -->
-    <div class="video-fallback" style="background: url('/assets/css/images/banner.jpg') center/cover no-repeat;"></div>
-    <div class="video-debug">⚠️ No video found, using image fallback</div>
+    <!-- Ultimate fallback: image -->
+    <div class="video-fallback"
+         style="background: url('{{ site.baseurl }}/assets/css/images/banner.jpg') center/cover no-repeat; width: 100%; height: 100vh;">
+    </div>
+    <div class="video-debug">⚠️ No videos found, using image fallback</div>
     {% endif %}
     {% endif %}
-    
+
     <!-- Dark Overlay -->
     <div class="video-overlay"></div>
-    
-    <!-- Improved Text Content -->
+
+    <!-- Text Content -->
     <div class="text-container">
         <h1 class="main-headline">
-            <!-- <span class="line-1">WE TELL STORIES THAT</span> -->
             <span class="line-2">EXPLORE THE UNKNOWN.</span>
         </h1>
         <div class="separator"></div>
@@ -59,7 +66,6 @@ custom_bg: bg/about0.jpg
         </p>
     </div>
 </section>
-
 
 
 <section class="about-block">
@@ -76,35 +82,26 @@ custom_bg: bg/about0.jpg
 </section>
 
 
-
-
-
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const video = document.querySelector(".video-background");
     const banner = document.querySelector(".video-banner");
 
     if (video) {
-        // Fade-in when video loads
         video.addEventListener("loadeddata", () => {
             banner.style.opacity = "1";
         });
 
-        // Video load fallback
         video.addEventListener("error", () => {
-            banner.style.background = "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%)";
+            banner.style.background =
+                "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%)";
         });
 
-        // Disable any interaction with the video
         video.style.pointerEvents = "none";
-    }
 
-    // ❌ Disable right-click on video
-    if (video) {
         video.addEventListener("contextmenu", (e) => e.preventDefault());
     }
 
-    // ❌ Disable right-click on the entire banner
     if (banner) {
         banner.addEventListener("contextmenu", (e) => e.preventDefault());
     }
