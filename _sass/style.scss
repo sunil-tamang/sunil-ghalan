@@ -1009,12 +1009,12 @@ header {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .navbar .container {
-        flex-direction: column;
+        // flex-direction: column;
         padding: 1em;
     }
     
     .navbar-logo {
-        margin-bottom: 1em;
+        // margin-bottom: 1em;
     }
     
     .logo {
@@ -1439,7 +1439,7 @@ header {
 /* Container */
 .about-block {
     width: 100%;
-    background: #ffffff;
+    // background: #ffffff;
     padding: 100px 20px;
     display: flex;
     justify-content: center;
@@ -1464,7 +1464,7 @@ header {
     font-size: 48px;
     font-weight: 600;
     line-height: 1.15;
-    color: #000000;
+    color: #f8f8f8;
 }
 
 /* ---------- RESPONSIVE ---------- */

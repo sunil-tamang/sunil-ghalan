@@ -1,6 +1,6 @@
 ---
 layout: team-member
-name: Taylor Rees
+name: Bishwas Gurung
 role: CO-FOUNDER / DIRECTOR
 photo: /assets/css/images/team/taylor-profile.jpg
 hover_image: /assets/css/images/team/taylor.jpg
