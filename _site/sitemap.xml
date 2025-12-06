@@ -2,11 +2,11 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://localhost:4000/films/ama-dablam/</loc>
-<lastmod>2025-12-06T11:03:51+05:45</lastmod>
+<lastmod>2025-12-06T11:14:12+05:45</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/films/ebc-night/</loc>
-<lastmod>2025-12-06T11:03:51+05:45</lastmod>
+<lastmod>2025-12-06T11:14:12+05:45</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/404</loc>
@@ -18,7 +18,7 @@
 <loc>http://localhost:4000/contact/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/films/</loc>
+<loc>http://localhost:4000/films</loc>
 </url>
 <url>
 <loc>http://localhost:4000/</loc>
