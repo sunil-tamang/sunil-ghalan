@@ -25,6 +25,12 @@ collections:
     output: true
     permalink: /films/:name/
 
+collections:
+  team:
+    output: true
+    permalink: /team/:name/
+
+
 
 defaults:
   - scope:

@@ -1,17 +1,17 @@
-- id: 1
-  name: "Alex Johnson"
-  photo: "/assets/images/team/alex.jpg"
-  position: "Creative Director"
-  department: "Design"
-  
-- id: 2
-  name: "Maria Chen"
-  photo: "/assets/images/team/maria.jpg"
-  position: "Lead Developer"
-  department: "Engineering"
-  
-- id: 3
-  name: "David Wilson"
-  photo: "/assets/images/team/david.jpg"
-  position: "Project Manager"
-  department: "Operations"
+- id: renan
+  name: Renan Ozturk
+  role: CO-FOUNDER / DIRECTOR
+  hover_image: /assets/css/images/team/renan.jpg
+  photo: /assets/css/images/team/renan.jpg
+
+- id: taylor
+  name: Taylor Rees
+  role: CO-FOUNDER / DIRECTOR
+  hover_image: /assets/css/images/team/taylor.jpg
+  # photo: /assets/css/images/team/taylor-profile.jpg
+
+- id: eric
+  name: Eric Crosland
+  role: DIRECTOR
+  hover_image: /assets/css/images/team/eric.jpg
+  photo: /assets/css/images/team/eric.jpg

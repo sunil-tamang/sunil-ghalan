@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/films/ama-dablam/</loc>
-<lastmod>2025-12-06T11:45:03+05:45</lastmod>
+<loc>http://localhost:4000/team/eric/</loc>
+<lastmod>2025-12-06T12:10:28+05:45</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/films/ebc-night/</loc>
-<lastmod>2025-12-06T11:45:03+05:45</lastmod>
+<loc>http://localhost:4000/team/renan/</loc>
+<lastmod>2025-12-06T12:10:28+05:45</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/team/taylor/</loc>
+<lastmod>2025-12-06T12:10:28+05:45</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/404</loc>
