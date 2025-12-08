@@ -4,36 +4,56 @@ title: Films
 permalink: /films/
 ---
 
-<section class="films-list" style="background-color: #111; color: #fff; padding: 50px 20px; font-family: 'Helvetica Neue', sans-serif;">
-  <h1 style="text-align: center; font-size: 3rem; margin-bottom: 50px;">Films</h1>
+<link rel="stylesheet" href="{{ '/assets/css/films.css' | relative_url }}">
 
-  <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+<section class="films-page">
+
+  <h1 class="films-title">Films</h1>
+
+  <div class="films-grid">
 
     {% for pair in site.data.films %}
       {% assign slug = pair[0] %}
       {% assign film = pair[1] %}
 
-      <article class="film-card" style="background: #1a1a1a; border-radius: 12px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;">
-        <a href="{{ '/films/' | append: slug | append: '/' | relative_url }}" style="display: block; text-decoration: none; color: inherit;">
-          
-          <img src="{{ film.thumbnail | relative_url }}" alt="{{ film.title | escape }}" style="width: 100%; display: block; object-fit: cover; height: 180px;">
+      <a href="{{ '/films/' | append: slug | append: '/' | relative_url }}" class="film-card">
 
-          <div style="padding: 15px;">
-            <h2 style="font-size: 1.5rem; margin-bottom: 5px;">{{ film.title }}</h2>
-            <p style="opacity: 0.7; font-size: 0.9rem;">{{ film.year }} • {{ film.category }}</p>
-          </div>
+        <!-- Thumbnail -->
+        <img class="film-thumb" src="{{ film.thumbnail | relative_url }}" alt="{{ film.title }}">
 
-        </a>
-      </article>
+        <!-- Hover Video -->
+        {% if film.hover_video %}
+        <video class="film-video" muted preload="metadata" loop>
+          <source src="{{ film.hover_video | relative_url }}" type="video/mp4">
+        </video>
+        {% endif %}
+
+        <div class="film-info">
+          <h2 class="film-title">{{ film.title }}</h2>
+          <p class="film-meta">{{ film.year }} • {{ film.category }}</p>
+        </div>
+
+      </a>
 
     {% endfor %}
 
   </div>
+
 </section>
 
-<style>
-.film-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-}
-</style>
+<script>
+document.querySelectorAll(".film-card").forEach(card => {
+  const video = card.querySelector(".film-video");
+  if (!video) return;
+
+  card.addEventListener("mouseenter", () => {
+    video.currentTime = 0;
+    video.play();
+  });
+
+  card.addEventListener("mouseleave", () => {
+    video.pause();
+    video.currentTime = 0;
+  });
+});
+</script>

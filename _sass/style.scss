@@ -978,9 +978,9 @@ header {
 }
 
 .logo {
-    height: 40px; /* Adjust based on your logo */
+    height: 150px; /* Adjust based on your logo */
     width: auto;
-    max-height: 50px;
+    // max-height: 50px;
     transition: transform 0.3s ease;
 }
 
@@ -1636,4 +1636,97 @@ header {
 .film-desc {
   font-size: 15px;
   line-height: 1.4;
+}
+
+
+
+
+
+
+/* ===========================
+   FILMS PAGE — PROFESSIONAL
+   =========================== */
+
+.films-page {
+  background-color: #000;
+  color: #fff;
+  padding: 70px 20px;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.films-title {
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 300;
+  letter-spacing: .5px;
+  margin-bottom: 70px;
+}
+
+.films-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 40px;
+}
+
+.film-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #111;
+  cursor: pointer;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.film-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 22px 60px rgba(0,0,0,0.75);
+}
+
+/* Poster */
+.film-thumb {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  transition: opacity .4s ease;
+  z-index: 2;
+  position: relative;
+}
+
+/* Hover video */
+.film-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity .4s ease;
+}
+
+.film-card:hover .film-thumb {
+  opacity: 0;
+}
+
+.film-card:hover .film-video {
+  opacity: 1;
+}
+
+/* Text info */
+.film-info {
+  padding: 18px 20px;
+}
+
+.film-title {
+  font-size: 1.4rem;
+  margin: 0 0 5px;
+  font-weight: 500;
+}
+
+.film-meta {
+  opacity: .75;
+  font-size: .95rem;
 }
